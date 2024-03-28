@@ -135,7 +135,6 @@ namespace Vjezba.Model
                     filtriraneOsobe.Add(osoba);
                 }
             }
-
             return filtriraneOsobe;
         }
     }
