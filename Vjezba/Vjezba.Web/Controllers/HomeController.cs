@@ -28,6 +28,11 @@ namespace Vjezba.Web.Controllers
 
             return View();
         }
+        public IActionResult FAQ(int? selected = null)
+        {
+            ViewBag.Selected = selected;
+            return View();
+        }
 
         /// <summary>
         /// Ova akcija se poziva kada na formi za kontakt kliknemo "Submit"
