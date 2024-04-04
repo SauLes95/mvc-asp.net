@@ -4,3 +4,30 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Podaci koji su proslijeđeni iz controller-a: @ViewData["Message"]</p>
+
+<form>
+    <label for="imePrezime">Ime i prezime:</label><br>
+    <input type="text" id="imePrezime" name="imePrezime"><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+
+    <label for="poruka">Poruka:</label><br>
+    <textarea id="poruka" name="poruka"></textarea><br>
+
+    <label for="vrstaPoruke">Vrsta poruke:</label><br>
+    <select id="vrsta poruke" name="vrsta poruke">
+        <option value="option1">Pohvala</option>
+        <option value="option2">Upit</option>
+        <option value="option3">Poslovni prijedlog</option>
+        <option value="option4">Žalba</option>
+    </select><br>
+
+    <label for="newsletter">Želite li primati newsletter?</label><br>
+    <input type="radio" id="da" name="newsletter" value="Da">
+    <label for="da">Da</label><br>
+    <input type="radio" id="ne" name="newsletter" value="Ne">
+    <label for="ne">Ne</label><br>
+    <br />
+    <input type="submit" value="Pošalji">
+</form>
