@@ -3,5 +3,13 @@
     ViewData["Title"] = "View";
 }
 
-<p>@ViewBag.Message</p>
+<h1>Poruka uspješno poslana!.</h1>
+<div class="alert alert-success mt-3" id="contactAlert">
+    @ViewBag.Message
+</div>
 
+<script>
+    function closeAlert() {
+        document.getElementById("contactAlert").style.display = "none";
+    }
+</script>
