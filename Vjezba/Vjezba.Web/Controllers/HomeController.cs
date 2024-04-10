@@ -48,13 +48,14 @@ namespace Vjezba.Web.Controllers
         {
 
             //Ovdje je potrebno obraditi podatke i pospremiti finalni string u ViewBag
-            string imePrezime = formData["imePrezime"];
+            string ime = formData["ime"];
+            string prezime = formData["prezime"];
             string email = formData["email"];
             string poruka = formData["poruka"];
             string vrstaPoruke = formData["vrstaPoruke"];
             string newsletter = !string.IsNullOrEmpty(formData["newsletter"]) ? "obavijestit ćemo vas o daljnjim promjenama preko newslettera." : "nećemo vas obavijestiti o daljnjim promjenama preko newslettera.";
 
-            ViewBag.Message = $"Poštovani {imePrezime} ({email}), zaprimili smo vašu poruku te će vam se netko ubrzo javiti. Sadržaj vaše poruke je: [{vrstaPoruke}] {poruka}. Također, {newsletter}";
+            ViewBag.Message = $"Poštovani {ime} {prezime} ({email}), zaprimili smo vašu poruku te će vam se netko ubrzo javiti. Sadržaj vaše poruke je: [{vrstaPoruke}] {poruka}. Također, {newsletter}";
 
             //Kao rezultat se pogled /Views/Home/ContactSuccess.cshtml renderira u "pravi" HTML
             //Kao parametar se predaje naziv cshtml datoteke koju treba obraditi (ne koristi se default vrijednost)
