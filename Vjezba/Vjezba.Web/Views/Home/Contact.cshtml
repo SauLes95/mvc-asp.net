@@ -5,64 +5,82 @@
 
 <p>Podaci koji su proslijeđeni iz controller-a: @ViewData["Message"]</p>
 
-<div class="container">
-    <form action="/Home/SubmitQuery" method="post">
-        <div class="row" style="padding-top: 10px;">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="ime">Ime:</label>
-                    <input type="text" class="form-control" id="ime" name="ime">
-                </div>
+
+<button type="button" id=„modal-toggle-button“ class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalCenter">
+    Kontaktirajte nas!
+</button>
+
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
             </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label for="prezime">Prezime:</label>
-                    <input type="text" class="form-control" id="prezime" name="prezime">
-                </div>
+            <div class="modal-body">
+                <form action="/Home/SubmitQuery" method="post">
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ime">Ime:</label>
+                                <input type="text" class="form-control" id="ime" name="ime">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="prezime">Prezime:</label>
+                                <input type="text" class="form-control" id="prezime" name="prezime">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="poruka">Poruka:</label>
+                                <textarea class="form-control" id="poruka" name="poruka"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="vrstaPoruke">Vrsta poruke:</label>
+                                <select class="form-control" id="vrstaPoruke" name="vrstaPoruke">
+                                    <option value="Pohvala">Pohvala</option>
+                                    <option value="Upit">Upit</option>
+                                    <option value="Poslovni prijedlog">Poslovni prijedlog</option>
+                                    <option value="Žalba">Žalba</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding-top: 10px;">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    <input type="checkbox" id="newsletter" name="newsletter"> Želim primati newsletter
+                                </label>
+                            </div>
+                        </div>            
+                    </div>             
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <div style="float: right;">
+                            <div style="text-align: right;">
+                                <input type="submit" class="btn btn-primary" style="float: right;" value="Pošalji upit">
+                            </div>
+                        </div>
+                    </div>
+                 </form>
             </div>
         </div>
-        <div class="row" style="padding-top: 10px;">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email">
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="poruka">Poruka:</label>
-                    <textarea class="form-control" id="poruka" name="poruka"></textarea>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <div class="col-md-12">
-                <div class="form-group">
-                    <label for="vrstaPoruke">Vrsta poruke:</label>
-                    <select class="form-control" id="vrstaPoruke" name="vrstaPoruke">
-                        <option value="Pohvala">Pohvala</option>
-                        <option value="Upit">Upit</option>
-                        <option value="Poslovni prijedlog">Poslovni prijedlog</option>
-                        <option value="Žalba">Žalba</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-        <div class="row" style="padding-top: 10px;">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" id="newsletter" name="newsletter"> Želim primati newsletter
-                    </label>
-                </div>
-            </div>
-            <div class="col-md-6" style="float: right;">
-                <div style="text-align: right;">
-                    <input type="submit" class="btn btn-primary" style="float: right;" value="Pošalji upit">
-                </div>
-            </div>
-        </div>        
-    </form>
+    </div>
 </div>
