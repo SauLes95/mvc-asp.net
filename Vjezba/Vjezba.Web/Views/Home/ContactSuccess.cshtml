@@ -3,6 +3,14 @@
     ViewData["Title"] = "View";
 }
 
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/Home">Home</a></li>
+        <li class="breadcrumb-item"><a href="/Home/Contact">Kontakt</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Poruka poslana</li>
+    </ol>
+</nav>
+
 <h1>Poruka uspješno poslana!.</h1>
 <div class="alert alert-success mt-3" id="contactAlert">
     @ViewBag.Message
