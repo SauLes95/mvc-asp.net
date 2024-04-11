@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Linq;
 using Vjezba.Web.Mock;
 using Vjezba.Web.Models;
 
@@ -7,14 +8,23 @@ namespace Vjezba.Web.Controllers
 {
     public class ClientController : Controller
     {
-        public IActionResult Index()
+        public IActionResult Index(string query)
         {
-            IQueryable<Client> clientsQuery = MockClientRepository.Instance.All();
-            List<Client> clients = clientsQuery.ToList();
-            var clientNum = clients.Count;
-            ViewBag.Message = $"U sustavu postoji {clientNum} klijenata.";
+            if (string.IsNullOrEmpty(query))
+            {
+                List<Client> clients = MockClientRepository.Instance.All().ToList();
+                return View(clients);
+            }
 
-            return View(clients);
+            else
+            {
+                List<Client> filteredClients = MockClientRepository.Instance.All()
+                    .Where(client => client.FullName.IndexOf(query, StringComparison.OrdinalIgnoreCase) >= 0)
+                    .ToList();
+
+                return View(filteredClients);
+            }
+
         }
 
         public IActionResult Details(int id)

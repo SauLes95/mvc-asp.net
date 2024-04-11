@@ -5,10 +5,10 @@
     @ViewBag.Message
 </div>
 
-<form action="/Client/Details" method="post">
-    <label for="clientID">Client ID:</label><br>
-    <input type="text" id="ClientID" name="clientID"><br><br>
-    <input type="submit" value="Pošalji">
+<form action="/Client/Index" method="get">
+    <label for="client"></label>
+    <input type="text" id="clientText" name="query">
+    <input type="submit" value="Submit">
 </form>
 
 <table class="table">
