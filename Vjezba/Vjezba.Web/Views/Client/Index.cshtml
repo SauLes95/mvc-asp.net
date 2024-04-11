@@ -1,5 +1,29 @@
-﻿@model List<Vjezba.Web.Mock.Client>
+﻿@using Vjezba.Web.Mock
+@model List<Vjezba.Web.Mock.Client>
 
 <div class="alert alert-info mt-3" id="contactAlert">
     @ViewBag.Message
 </div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Client</th>
+            <th scope="col">Address</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var client in Model)
+        {
+
+            <tr>
+                <td>@client.FirstName @client.LastName</td>
+                <td>@client.Address</td>
+                <td>@client.Email</td>
+                <td>@client.City</td>
+            </tr>
+        }
+    </tbody>
+</table>

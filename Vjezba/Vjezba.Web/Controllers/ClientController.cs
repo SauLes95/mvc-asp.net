@@ -14,7 +14,7 @@ namespace Vjezba.Web.Controllers
             var clientNum = clients.Count;
             ViewBag.Message = $"U sustavu postoji {clientNum} klijenata.";
 
-            return View("index");
+            return View(clients);
         }
     }
 }
