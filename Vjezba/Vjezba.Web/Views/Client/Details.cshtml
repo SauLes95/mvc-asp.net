@@ -1,0 +1,45 @@
+﻿@model Vjezba.Web.Mock.Client
+
+<h1>Details</h1>
+<h2>Client</h2>
+@if (Model == null)
+{
+    <div class="alert alert-danger mt-3" id="contactAlert">
+        Nije moguće naći korisnika s unesenim ID-em
+    </div>
+}
+else{
+<table>
+    <tr>
+        <td>ID</td>
+        <td>@Model.ID</td>
+    </tr>
+    <tr>
+        <td>Ime i prezime</td>
+        <td>@Model.FirstName @Model.LastName</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td>@Model.Email</td>
+    </tr>
+    <tr>
+        <td>Spol</td>
+        <td>@Model.Gender</td>
+    </tr>
+    <tr>
+        <td>Adresa</td>
+        <td>@Model.Address</td>
+    </tr>
+    <tr>
+        <td>Tel.</td>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <td>Grad</td>
+        <td>@Model.City</td>
+    </tr>
+</table>
+
+}
+
+<a asp-controller="Client" asp-action="Index">Back to list</a>

@@ -5,6 +5,12 @@
     @ViewBag.Message
 </div>
 
+<form action="/Client/Details" method="post">
+    <label for="clientID">Client ID:</label><br>
+    <input type="text" id="ClientID" name="clientID"><br><br>
+    <input type="submit" value="Pošalji">
+</form>
+
 <table class="table">
     <thead>
         <tr>
@@ -17,12 +23,20 @@
     <tbody>
         @foreach (var client in Model)
         {
-
             <tr>
                 <td>@client.FirstName @client.LastName</td>
                 <td>@client.Address</td>
                 <td>@client.Email</td>
-                <td>@client.City</td>
+                <td>
+                    @if (client.City == null)
+                    {
+                        <text> </text>
+                    }
+                    else
+                    {
+                        @client.City.Name
+                    }
+                </td>
             </tr>
         }
     </tbody>
