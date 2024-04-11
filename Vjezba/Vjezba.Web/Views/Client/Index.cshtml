@@ -24,7 +24,7 @@
         @foreach (var client in Model)
         {
             <tr>
-                <td>@client.FirstName @client.LastName</td>
+                <td><a href="/Client/Details/@client.ID">@client.FullName</a></td>
                 <td>@client.Address</td>
                 <td>@client.Email</td>
                 <td>
