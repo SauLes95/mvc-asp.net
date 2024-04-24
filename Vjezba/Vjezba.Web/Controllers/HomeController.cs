@@ -34,7 +34,7 @@ namespace Vjezba.Web.Controllers
                     return NotFound();
             }
         }
-
+        [Route("cesto-postavljana-pitanja/{selected:int:range(1,99)?}")]
         public IActionResult FAQ(int? selected = null)
         {
             ViewData["selected"] = selected;
