@@ -43,7 +43,15 @@ else{
     </tr>
     <tr>
         <td>Grad</td>
-        <td>@Model.City</td>
+            <td>@if (Model.City == null)
+                {
+                    <text></text>
+                }
+                else
+                {
+                    @Model.City.Name;
+                }
+            </td>
     </tr>
 </table>
 

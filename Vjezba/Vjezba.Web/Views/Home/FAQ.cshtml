@@ -7,19 +7,19 @@
 <p>Često postavljena pitanja</p>
 
 <ul id="questions">
-    <li id="q1">
+    <li id="q1" style="font-weight: @(ViewBag.Selected == 1 ? "bold" : "normal")">
         <a>Što je ASP.NET i koje su njegove glavne značajke?</a>
     </li>
-    <li id="q2">
+    <li id="q2" style="font-weight: @(ViewBag.Selected == 2 ? "bold" : "normal")">
         <a>Koje su osnovne razlike između ASP.NET Web Forms i ASP.NET MVC?</a>
     </li>
-    <li id="q3">
+    <li id="q3" style="font-weight: @(ViewBag.Selected == 3 ? "bold" : "normal")">
         <a>Koje alate preporučujete za razvoj aplikacija na ASP.NET platformi?</a>
     </li>
     <li id="q4" style="font-weight: @(ViewBag.Selected == 4 ? "bold" : "normal")">
         <a>Koje su najnovije inačice ASP.NET platforme i koje su njihove glavne nadogradnje?</a>
     </li>
-    <li id="q5">
+    <li id="q5" style="font-weight: @(ViewBag.Selected == 5 ? "bold" : "normal")">
         <a>Koje su integracijske mogućnosti ASP.NET aplikacija s drugim Microsoftovim proizvodima, poput Azurea ili SQL Servera?</a>
     </li>
 </ul>

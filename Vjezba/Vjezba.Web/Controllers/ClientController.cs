@@ -63,6 +63,34 @@ namespace Vjezba.Web.Controllers
             }
         }
 
+        [HttpPost]
+        public ActionResult AdvancedSearch(ClientFilterModel filterModel)
+        {
+            var clients = MockClientRepository.Instance.All();
+
+            if (!string.IsNullOrEmpty(filterModel.queryName))
+            {
+                clients = clients.Where(c => c.FullName.ToLower().Contains(filterModel.queryName.ToLower()));
+            }
+
+            if (!string.IsNullOrEmpty(filterModel.queryEmail))
+            {
+                clients = clients.Where(c => c.Email.ToLower().Contains(filterModel.queryEmail.ToLower()));
+            }
+
+            if (!string.IsNullOrEmpty(filterModel.queryAddress))
+            {
+                clients = clients.Where(c => c.Address.ToLower().Contains(filterModel.queryAddress.ToLower()));
+            }
+
+            if (!string.IsNullOrEmpty(filterModel.queryCity))
+            {
+                clients = clients.Where(c => c.City != null && c.City.Name.ToLower().Contains(filterModel.queryCity.ToLower()));
+            }
+
+            return View("Index", clients.ToList());
+        }
+
         public IActionResult Details(int id)
         {
             var client = MockClientRepository.Instance.FindByID(id);
