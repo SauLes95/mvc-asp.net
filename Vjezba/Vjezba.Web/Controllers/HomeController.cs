@@ -13,9 +13,26 @@ namespace Vjezba.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [Route("oaplikaciji/{lang:length(2)}")]
+        public IActionResult Privacy(string lang)
         {
-            return View();
+            switch (lang)
+            {
+                case "hr":
+                    ViewBag.Message = "Izabrali ste poruku na hrvatskom jeziku";
+                    return View();
+                case "en":
+                    ViewBag.Message = "You have chosen a message in English";
+                    return View();
+                case "de":
+                    ViewBag.Message = "Sie haben eine Nachricht auf Deutsch ausgewählt";
+                    return View();
+                case "zh":
+                    ViewBag.Message = "您已选择一条中文消息";
+                    return View();
+                default:
+                    return NotFound();
+            }
         }
 
         public IActionResult FAQ(int? selected = null)
@@ -25,6 +42,7 @@ namespace Vjezba.Web.Controllers
             return View();
         }
 
+        [Route("kontakt-forma")]
         public IActionResult Contact()
         {
             ViewBag.Message = "Jednostavan način proslijeđivanja poruke iz Controller -> View.";
