@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Vjezba.Web.Mock;
 using Vjezba.Web.Models;
 
+
 namespace Vjezba.Web.Controllers
 {
     public class ClientController : Controller
@@ -17,7 +18,7 @@ namespace Vjezba.Web.Controllers
             if (!string.IsNullOrWhiteSpace(query))
                 clientQuery = clientQuery.Where(p => p.FullName.ToLower().Contains(query));
 
-            ViewBag.ActiveTab = 1;
+            ViewBag.ActiveTab = 4;
 
             return View(clientQuery.ToList());
         }
@@ -66,7 +67,7 @@ namespace Vjezba.Web.Controllers
             return View("Index", model);
         }
 
-        public IActionResult Details(int? id = null)
+		public IActionResult Details(int? id = null)
         {
             var model = id != null ? MockClientRepository.Instance.FindByID(id.Value) : null;
             return View(model);

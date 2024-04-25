@@ -1,4 +1,6 @@
 ﻿@using Vjezba.Web.Mock
+@using Vjezba.Web.Models
+
 @model List<Client>
 
 @{
@@ -23,6 +25,12 @@
 		</li>
 		<li class="nav-item">
 			<a class="nav-link @(ViewBag.ActiveTab == 3 ? "active" : "")" href="#z-5-7" aria-controls="z-5-7" role="tab" data-bs-toggle="tab">Zadatak 5.7</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link @(ViewBag.ActiveTab == 4 ? "active" : "")" href="#z-3-3-1" aria-controls="z-3-3-1" role="tab" data-bs-toggle="tab">Zadatak 3.1.1</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link @(ViewBag.ActiveTab == 5 ? "active" : "")" href="#z-3-3-2" aria-controls="z-3-3-2" role="tab" data-bs-toggle="tab">Zadatak 3.1.2</a>
 		</li>
 	</ul>
 
@@ -92,6 +100,15 @@
 					</div>
 				</div>
 			</form>
+		</div>
+		<div role="tabpanel" class="tab-pane @(ViewBag.ActiveTab == 4 ? "show active" : "")" id="z-3-3-1">
+			<h4>Zadatak 3.3.1</h4>
+			@await Html.PartialAsync("_ClientFilter", new ClientFilterModel())
+			@* <partial name="_ClientFilter" model="new ClientFilterModel()" /> *@
+		</div>
+		<div role="tabpanel" class="tab-pane @(ViewBag.ActiveTab == 5 ? "show active" : "")" id="z-3-3-2">
+			<h4>Zadatak 3.3.2</h4>
+			<partial name="_ClientFilter2" model="new ClientFilterModel()" />
 		</div>
 	</div>
 </div>

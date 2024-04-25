@@ -1,0 +1,35 @@
+﻿@model Vjezba.Web.Models.ClientFilterModel
+
+<form action="@Url.Action("AdvancedSearch")" method="post">
+   
+	<div class="row">
+		<div class="col">
+			<div class="form-group">
+				@Html.TextBoxFor(m => m.FullName, new { @class = "form-control", placeholder = "pretraga po imenu" })
+@* 				<input asp-for="FullName" class="form-control" placeholder="Pretraga po imenu" />
+ *@
+			</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				@Html.TextBoxFor(m => m.Address, new { @class = "form-control", placeholder = "Pretraga po adresi" })
+@* 				<input asp-for="Address" class="form-control" placeholder="Pretraga po imenu" />
+ *@			</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				@Html.TextBoxFor(m => m.Email, new { @class = "form-control", placeholder = "Pretraga po e-mailu" })
+@* 				<input asp-for="Email" class="form-control" placeholder="Pretraga po imenu" />
+ *@			</div>
+		</div>
+		<div class="col">
+			<div class="form-group">
+				@Html.TextBoxFor(m => m.City, new { @class = "form-control", placeholder = "Pretraga po gradu" })
+@* 				<input asp-for="City" class="form-control" placeholder="Pretraga po imenu" />
+ *@			</div>
+		</div>
+		<div class="col">
+			<button type="submit" class="btn btn-primary m-t-10">Submit</button>
+		</div>
+	</div>
+</form>
