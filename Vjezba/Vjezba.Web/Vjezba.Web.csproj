@@ -10,4 +10,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="8.0.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Vjezba.DAL\Vjezba.DAL.csproj" />
+    <ProjectReference Include="..\Vjezba.Model\Vjezba.Model.csproj" />
+  </ItemGroup>
+
 </Project>
